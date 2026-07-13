@@ -1,28 +1,7 @@
-variable "project_prefix" {
-  description = "Short prefix for all resource names."
-  type        = string
-  default     = "learnhcp"
-}
-
-variable "environment" {
-  description = "Deployment environment name (for example: dev, test, prod)."
-  type        = string
-  default     = "dev"
-}
-
 variable "location" {
   description = "Azure region where resources will be created."
   type        = string
-  default     = "eastus"
-}
-
-variable "tags" {
-  description = "Tags applied to all resources that support tags."
-  type        = map(string)
-  default = {
-    managed_by = "terraform"
-    project    = "learn-hcp"
-  }
+  default     = "southeastasia "
 }
 
 variable "account_tier" {
@@ -35,4 +14,16 @@ variable "account_replication_type" {
   description = "Storage account replication strategy."
   type        = string
   default     = "LRS"
+}
+
+variable "resrource_group_name" {
+  description = "Resource group name for the storage account."
+  type        = string
+  default     = "rg-rflores-lab"
+}
+
+variable "storage_account_name" {
+  description = "Globally unique storage account name (3-24 lowercase alphanumeric)."
+  type        = string
+  default     = "stgaccountrfloreslab"
 }
