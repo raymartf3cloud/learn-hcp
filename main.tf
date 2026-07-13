@@ -11,7 +11,7 @@ locals {
 
   # Azure Storage account names must be 3-24 chars and lowercase alphanumeric only.
   storage_account_name = substr(
-    regexreplace(lower("${var.project_prefix}${var.environment}${random_string.storage_suffix.result}"), "[^a-z0-9]", ""),
+    replace(lower("${var.project_prefix}${var.environment}${random_string.storage_suffix.result}"), "/[^a-z0-9]/", ""),
     0,
     24
   )
